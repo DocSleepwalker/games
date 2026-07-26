@@ -37,12 +37,14 @@
             padding: 20px;
             margin-bottom: 24px;
             display: flex;
-            gap: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
             align-items: center;
             transition: background 0.2s;
             color: #fff;
-            flex-wrap: wrap;
             min-width: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         .game-card:hover {
             background: #3a3a5a;
@@ -67,19 +69,22 @@
             display: block;
         }
         .game-info {
-            flex: 1;
-            min-width: 150px;
+            flex: 1 1 180px;
+            min-width: 120px;
+            max-width: 100%;
         }
         .game-title {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 6px;
+            word-wrap: break-word;
         }
         .game-desc {
             font-size: 0.9rem;
             color: #ccc;
             line-height: 1.5;
             margin-bottom: 8px;
+            word-wrap: break-word;
         }
         .game-controls {
             font-size: 0.8rem;
@@ -95,6 +100,7 @@
         .game-links a {
             color: #7a7aaa;
             text-decoration: none;
+            word-wrap: break-word;
         }
         .game-links a:hover {
             color: #aaa;
@@ -103,9 +109,9 @@
         .play-btn {
             flex-shrink: 0;
             background: #5a5a8a;
-            padding: 12px 28px;
+            padding: 10px 20px;
             border-radius: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             transition: background 0.2s;
             color: #fff;
@@ -115,6 +121,8 @@
             display: inline-block;
             white-space: nowrap;
             text-align: center;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .play-btn:hover {
             background: #7a7aaa;
@@ -149,6 +157,25 @@
                 width: 100%;
                 text-align: center;
             }
+        }
+
+        /* Telegram fix */
+        .game-card {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        .game-info {
+            flex: 1 1 150px !important;
+            min-width: 100px !important;
+            max-width: 100% !important;
+        }
+        .play-btn {
+            flex: 0 0 auto !important;
+            max-width: 100% !important;
+            white-space: nowrap !important;
         }
     </style>
 </head>
