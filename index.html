@@ -17,27 +17,27 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
         }
         h1 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 5px;
         }
         .subtitle {
             text-align: center;
             color: #aaa;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
+            margin-bottom: 40px;
+            font-size: 1rem;
         }
         .game-card {
             background: #2a2a4a;
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 24px;
             display: flex;
-            justify-content: space-between;
+            gap: 24px;
             align-items: center;
             transition: background 0.2s;
             text-decoration: none;
@@ -46,32 +46,77 @@
         .game-card:hover {
             background: #3a3a5a;
         }
+        .game-screenshot {
+            flex-shrink: 0;
+            width: 160px;
+            height: 205px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #0d0d1a;
+        }
+        .game-screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .game-info {
+            flex: 1;
+        }
         .game-title {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 600;
+            margin-bottom: 6px;
         }
         .game-desc {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .game-controls {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .game-controls strong {
             color: #aaa;
         }
         .play-btn {
+            flex-shrink: 0;
             background: #5a5a8a;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            color: #fff;
+            text-decoration: none;
         }
         .play-btn:hover {
             background: #7a7aaa;
         }
         .footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 0.8rem;
             color: #555;
         }
-        a {
-            text-decoration: none;
+        @media (max-width: 600px) {
+            .game-card {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .game-screenshot {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 160 / 205;
+                max-width: 160px;
+                margin: 0 auto;
+            }
+            .play-btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -80,18 +125,28 @@
         <h1>🕹️ DocSleepwalker Games</h1>
         <p class="subtitle">Игры для PICO-8 и русские локализации</p>
 
-        <a href="friends/index.html" class="game-card">
-            <div>
+        <!-- Карточка английской версии -->
+        <a href="friends/friends.html" class="game-card">
+            <div class="game-screenshot">
+                <img src="friends/friends.p8.png" alt="Friends cartridge">
+            </div>
+            <div class="game-info">
                 <div class="game-title">Friends: The One With The Embarassing Trivia</div>
-                <div class="game-desc">A small game inspired by my favorite TV show «Friends» and one of its most memorable episodes - «The One With the Embryos»</div>
+                <div class="game-desc">A small game inspired by «The One With the Embryos». Explore the apartments, find clues, and take Ross's quiz.</div>
+                <div class="game-controls"><strong>🕹️ Controls:</strong> Arrow keys · Z/X to interact</div>
             </div>
             <span class="play-btn">Play →</span>
         </a>
 
-        <a href="friends-rus/index.html" class="game-card">
-            <div>
+        <!-- Карточка русской версии -->
+        <a href="friends-rus/friends-rus.html" class="game-card">
+            <div class="game-screenshot">
+                <img src="friends-rus/friends-rus.p8.png" alt="Друзья картридж">
+            </div>
+            <div class="game-info">
                 <div class="game-title">Друзья: Викторина Росса</div>
-                <div class="game-desc">Небольшой квест, вдохновлённый моим любимым сериалом «Друзья», а именно серией «The One With the Embryos»</div>
+                <div class="game-desc">Небольшой квест по серии «The One With the Embryos». Исследуйте квартиры, ищите подсказки и проходите викторину.</div>
+                <div class="game-controls"><strong>🕹️ Управление:</strong> Стрелки · Z/X — взаимодействие</div>
             </div>
             <span class="play-btn">Играть →</span>
         </a>
