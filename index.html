@@ -42,7 +42,6 @@
             align-items: center;
             transition: background 0.2s;
             color: #fff;
-            min-width: 0;
             width: 100%;
             box-sizing: border-box;
         }
@@ -121,7 +120,6 @@
             display: inline-block;
             white-space: nowrap;
             text-align: center;
-            max-width: 100%;
             box-sizing: border-box;
         }
         .play-btn:hover {
@@ -141,10 +139,12 @@
             color: #aaa;
             text-decoration: underline;
         }
+
         @media (max-width: 600px) {
             .game-card {
                 flex-wrap: wrap;
                 gap: 16px;
+                justify-content: center;
             }
             .game-screenshot {
                 width: 100%;
@@ -153,29 +153,19 @@
                 max-width: 160px;
                 margin: 0 auto;
             }
+            .game-info {
+                flex: 1 1 100%;
+                min-width: 0;
+                max-width: 100%;
+                text-align: left;
+            }
             .play-btn {
                 width: 100%;
                 text-align: center;
+                padding: 12px 20px;
+                white-space: normal;
+                flex: 1 1 100%;
             }
-        }
-
-        /* Telegram fix */
-        .game-card {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            align-items: center !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-        }
-        .game-info {
-            flex: 1 1 150px !important;
-            min-width: 100px !important;
-            max-width: 100% !important;
-        }
-        .play-btn {
-            flex: 0 0 auto !important;
-            max-width: 100% !important;
-            white-space: nowrap !important;
         }
     </style>
 </head>
