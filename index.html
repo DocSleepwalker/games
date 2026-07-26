@@ -40,7 +40,6 @@
             gap: 24px;
             align-items: center;
             transition: background 0.2s;
-            text-decoration: none;
             color: #fff;
         }
         .game-card:hover {
@@ -53,6 +52,11 @@
             border-radius: 8px;
             overflow: hidden;
             background: #0d0d1a;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .game-screenshot:hover {
+            opacity: 0.85;
         }
         .game-screenshot img {
             width: 100%;
@@ -81,6 +85,18 @@
         .game-controls strong {
             color: #aaa;
         }
+        .game-links {
+            font-size: 0.8rem;
+            margin-top: 6px;
+        }
+        .game-links a {
+            color: #7a7aaa;
+            text-decoration: none;
+        }
+        .game-links a:hover {
+            color: #aaa;
+            text-decoration: underline;
+        }
         .play-btn {
             flex-shrink: 0;
             background: #5a5a8a;
@@ -91,6 +107,9 @@
             transition: background 0.2s;
             color: #fff;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
         }
         .play-btn:hover {
             background: #7a7aaa;
@@ -100,6 +119,14 @@
             margin-top: 40px;
             font-size: 0.8rem;
             color: #555;
+        }
+        .footer a {
+            color: #7a7aaa;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #aaa;
+            text-decoration: underline;
         }
         @media (max-width: 600px) {
             .game-card {
@@ -123,35 +150,43 @@
 <body>
     <div class="container">
         <h1>🕹️ DocSleepwalker Games</h1>
-        <p class="subtitle">Игры для PICO-8 и русские локализации</p>
+        <p class="subtitle">PICO-8 игры и фанатские локализации</p>
 
         <!-- Карточка английской версии -->
-        <a href="friends/friends.html" class="game-card">
-            <div class="game-screenshot">
+        <div class="game-card">
+            <div class="game-screenshot" onclick="window.open('friends/friends.p8.png', '_blank')">
                 <img src="friends/friends.p8.png" alt="Friends cartridge">
             </div>
             <div class="game-info">
                 <div class="game-title">Friends: The One With The Embarassing Trivia</div>
                 <div class="game-desc">A small game inspired by «The One With the Embryos». Explore the apartments, find clues, and take Ross's quiz.</div>
                 <div class="game-controls"><strong>🕹️ Controls:</strong> Arrow keys · Z/X to interact</div>
+                <div class="game-links">
+                    <a href="https://www.lexaloffle.com/bbs/?tid=155446" target="_blank">Lexaloffle page</a>
+                </div>
             </div>
-            <span class="play-btn">Play →</span>
-        </a>
+            <a href="friends/friends.html" class="play-btn">Play →</a>
+        </div>
 
         <!-- Карточка русской версии -->
-        <a href="friends-rus/friends-rus.html" class="game-card">
-            <div class="game-screenshot">
+        <div class="game-card">
+            <div class="game-screenshot" onclick="window.open('friends-rus/friends-rus.p8.png', '_blank')">
                 <img src="friends-rus/friends-rus.p8.png" alt="Друзья картридж">
             </div>
             <div class="game-info">
                 <div class="game-title">Друзья: Викторина Росса</div>
                 <div class="game-desc">Небольшой квест по серии «The One With the Embryos». Исследуйте квартиры, ищите подсказки и проходите викторину.</div>
                 <div class="game-controls"><strong>🕹️ Управление:</strong> Стрелки · Z/X — взаимодействие</div>
+                <div class="game-links">
+                    <a href="https://www.lexaloffle.com/bbs/?tid=155447" target="_blank">Страница на Lexaloffle</a>
+                </div>
             </div>
-            <span class="play-btn">Играть →</span>
-        </a>
+            <a href="friends-rus/friends-rus.html" class="play-btn">Играть →</a>
+        </div>
 
-        <div class="footer">Сделано на PICO-8 · 2026</div>
+        <div class="footer">
+            DocSleepwalker · 2026
+        </div>
     </div>
 </body>
 </html>
